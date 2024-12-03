@@ -37,7 +37,7 @@ public class ArrCharOps {
      */
     public static char charAt(char[] arr, int index) {
         // Replace the following statement with your code
-        return 0;
+        return arr[index];
     }
 
     /** If the two arrays have the same value in every index, 
@@ -45,7 +45,13 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
-        return false;
+        if (arr1.length != arr2.length || arr1.length ==0 || arr2.length ==0) return false; 
+        int index = 0;
+        while (index<arr1.length) {
+            if(arr1[index] != arr2[index]) return false;
+            index++;
+        }
+        return true;
     }
 
     /** Returns the index within the given array of the first occurrence of the given character.
@@ -53,6 +59,10 @@ public class ArrCharOps {
      */
     public static int indexOf(char[] arr, char ch) {
         // Replace the following statement with your code
+        if(arr.length == 0) return-1;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i] == ch) return i;
+        }
         return -1;
     }
 
@@ -60,6 +70,10 @@ public class ArrCharOps {
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
         // Replace the following statement with your code
+        if(arr.length == 0) return-1;
+        for(int i= fromIndex; i<arr.length; i++){
+            if(arr[i] == ch) return i;
+        }
         return -1;
     }
 
@@ -68,6 +82,10 @@ public class ArrCharOps {
      */
     public static int lastIndexOf(char[] arr, char ch) {
         // Replace the following statement with your code
+        if(arr.length == 0) return-1;
+        for(int i=arr.length; i>0; i--){
+            if(arr[i] == ch) return i;
+        }
         return -1;
     }
 
@@ -75,7 +93,19 @@ public class ArrCharOps {
     */
     public static char[] concat(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
-        return null;
+        char [] arr = new char[arr1.length+arr2.length];
+        int i=0;
+        while (i < arr1.length) {
+            arr[i]= arr1[i];
+            i++;
+        }
+        int j=0;
+        while (j<arr2.length) {
+            arr[i]= arr2[j];
+            i++;
+            j++;
+        }
+        return arr;
     }
 
     /** Returns a new array that can be described as a sub-array of this array.
@@ -85,6 +115,12 @@ public class ArrCharOps {
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
         // Replace the following statement with your code
+        char [] subArr = new char[endIndex-beginIndex];
+        int j=0;
+        for(int i= beginIndex; i<endIndex; i++){
+            subArr [j] = arr[i];
+            j++;
+        }
         return null;
     }
 
@@ -97,7 +133,13 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         // Replace the following statement with your code
-        return 0;
+        if(arr.length == 0)return 0;
+        int n=arr.length;
+        long hash= 0;
+        for(int i=0; i<n; i++){
+            hash =+ i*((long)Math.pow(7, n-(1+i)));
+        }
+        return hash;
     }
 
     /**
@@ -127,6 +169,25 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
-        return 0;
+        if(str1.length() == 0 || str2.length() == 0) return -2;
+        if(str1.length()<str2.length()) return -1;
+        char [] str3 = new char[str1.length()];
+        char [] str4 = new char[str2.length()];
+        int i =0;
+        while (i<str3.length || i<str4.length) {
+            if(i<str3.length) str3[i] = str1.charAt(i);
+            if(i<str4.length) str4[i] = str2.charAt(i);
+            i++;
+        }
+        if(equals(str3,str4 )) return 0;
+        else {
+            int j = 0;
+            while (indexOf(str4, str3[j]) != -1) {
+                j++;
+            }
+            if(str3[j]>str4[j]) return 1;
+        }
+        return -2;
+    
     }
 }
