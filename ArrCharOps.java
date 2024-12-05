@@ -45,7 +45,7 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
-        if (arr1.length != arr2.length || arr1.length ==0 || arr2.length ==0) return false; 
+        if ( arr1.length ==0 || arr2.length ==0 || arr1.length != arr2.length) return false; 
         int index = 0;
         while (index<arr1.length) {
             if(arr1[index] != arr2[index]) return false;
