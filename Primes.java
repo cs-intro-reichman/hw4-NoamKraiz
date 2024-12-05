@@ -16,7 +16,7 @@ public class Primes {
                 int i =2;
                 int count = 0;
                 while (i<arr.length) {
-                    if(arr[i]){
+                    if(arr[i]==true){
                         for(int j=i; j<arr.length; j++){
                             if(j%i == 0) arr[i]= false;
                         }
