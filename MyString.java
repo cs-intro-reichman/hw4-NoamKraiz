@@ -19,6 +19,7 @@ public class MyString {
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
         // Replace the following statement with your code
+        if(str =="")return "";
         String ans ="";
 		char ch = str.charAt(0);
 		if (ch >= 'a' && ch <='z'|| ch >='!' && ch <= '@')ans = "" + ch;
