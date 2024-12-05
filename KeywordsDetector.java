@@ -23,10 +23,12 @@ public class KeywordsDetector {
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         // Replace this comment with your code
         String str="";
+        String key="";
         for(int i=0; i<sentences.length; i++){
             str = lowerCase(sentences[i]);
             for(int j=0; j<keywords.length; j++){
-                if(contains(str, keywords[j])){
+                key = lowerCase(keywords[j]);
+                if(contains(str, key)){
                     System.out.println(sentences[i]);
                     break;
                 }
