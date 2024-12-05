@@ -1,5 +1,8 @@
 public class MyString {
     public static void main(String[] args) {
+
+
+
         System.out.println("Testing lowercase:");
         System.out.println("UnHappy : " + lowerCase("UnHappy"));
         System.out.println("This costs 15 Sheksls : " + lowerCase("This costs 15 Sheksls"));
@@ -22,7 +25,7 @@ public class MyString {
         if(str =="")return "";
         String ans ="";
 		char ch = str.charAt(0);
-		if (ch >= 'a' && ch <='z'|| ch >='!' && ch <= '@')ans = "" + ch;
+		if (ch >= 'a' && ch <='z'|| ch >='!' && ch <= '@'|| ch ==' ')ans = "" + ch;
 		else if(ch >= 'A' && ch <= 'Z') 
 		{
 			ch+=32;
@@ -35,7 +38,7 @@ public class MyString {
 				ch+=32;
 				ans = ans + ch;
 			}
-			else if (ch >= 'a' && ch <='z' || ch >='!' && ch <= '@') ans = ans + ch;
+			else if (ch >= 'a' && ch <='z' || ch >='!' && ch <= '@'|| ch ==' ') ans = ans + ch;
 			i++;
 		}
 		return ans;
@@ -44,6 +47,7 @@ public class MyString {
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
         // Replace the following statement with your code
+
         if(str1.length()<str2.length()) return false;
         else if(str1.equals(str2)) return true;
         else{
