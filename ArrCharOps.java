@@ -37,7 +37,7 @@ public class ArrCharOps {
      */
     public static char charAt(char[] arr, int index) {
         // Replace the following statement with your code
-        return arr[index];
+        return arr[index-1];
     }
 
     /** If the two arrays have the same value in every index, 
@@ -45,6 +45,7 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
+        if (arr1==null || arr2==null) return false;
         if ( arr1.length ==0 || arr2.length ==0 || arr1.length != arr2.length) return false; 
         int index = 0;
         while (index<arr1.length) {
