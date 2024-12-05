@@ -14,19 +14,24 @@ public class Primes {
                 System.out.println("Prime numbers up to "+n+":");
                 for(int i=2; i<arr.length; i++) arr[i]=true;
                 int i =2;
-                int count = 0;
                 while (i<arr.length) {
                     if(arr[i]==true){
-                        for(int j=i; j<arr.length; j++){
-                            if(j%i == 0) arr[i]= false;
+                        for(int j=i+1; j<arr.length; j++){
+                            if(j%i == 0) arr[j]= false;
                         }
-                        System.out.println(i);
-                        count++;
+                        
                     }
                     i++;
                 }
-                double pricent = count/n*100 ;
-                System.out.println("There are "+count+" primes between 2 and "+n+" ("+pricent+"% are primes)");
+                int count = 0;
+                for(int k=0; k<arr.length;k++){
+                    if(arr[k]==true){
+                        System.out.println(k);
+                        count++;
+                    }
+                }
+                double pricent = (double)count/n*100 ;
+                System.out.println("There are "+count+" primes between 2 and "+n+" ("+(int)pricent+"% are primes)");
             }
     }
 }
