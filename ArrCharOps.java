@@ -24,6 +24,9 @@ public class ArrCharOps {
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
+
+
+
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -172,7 +175,7 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
-        if(str1=="" || str2=="") return 1;
+        if(str1=="" || str2=="") return -2;
         if(str1.length() == 0 || str2.length() == 0) return -2;
         if(str1.length()<str2.length()) return -1;
         char [] str3 = new char[str1.length()];
