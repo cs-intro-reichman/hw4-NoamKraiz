@@ -83,7 +83,7 @@ public class ArrCharOps {
     public static int lastIndexOf(char[] arr, char ch) {
         // Replace the following statement with your code
         if(arr.length == 0) return-1;
-        for(int i=arr.length; i>0; i--){
+        for(int i=arr.length-1; i>0; i--){
             if(arr[i] == ch) return i;
         }
         return -1;
@@ -169,6 +169,7 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
+        if(str1=="" || str2=="") return -2;
         if(str1.length() == 0 || str2.length() == 0) return -2;
         if(str1.length()<str2.length()) return -1;
         char [] str3 = new char[str1.length()];
