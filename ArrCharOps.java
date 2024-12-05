@@ -2,6 +2,8 @@
  *  The library also features a string comparison method. */
 public class ArrCharOps {
     public static void main(String[] args) {
+
+
         String str = "clearly";
         char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
@@ -37,7 +39,7 @@ public class ArrCharOps {
      */
     public static char charAt(char[] arr, int index) {
         // Replace the following statement with your code
-        return arr[index-1];
+        return arr[index];
     }
 
     /** If the two arrays have the same value in every index, 
@@ -45,7 +47,7 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
-        if (arr1==null || arr2==null) return false;
+        if (arr1.length==0 && arr2.length==0) return true;
         if ( arr1.length ==0 || arr2.length ==0 || arr1.length != arr2.length) return false; 
         int index = 0;
         while (index<arr1.length) {
@@ -122,7 +124,7 @@ public class ArrCharOps {
             subArr [j] = arr[i];
             j++;
         }
-        return null;
+        return subArr;
     }
 
      /** Returns a single integer that represents the given array. This integer is sometimes 
@@ -138,7 +140,7 @@ public class ArrCharOps {
         int n=arr.length;
         long hash= 0;
         for(int i=0; i<n; i++){
-            hash =+ i*((long)Math.pow(7, n-(1+i)));
+            hash += arr[i]*((long)Math.pow(7, n-(1+i)));
         }
         return hash;
     }
